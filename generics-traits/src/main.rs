@@ -5,11 +5,11 @@ trait MyIterator {
 
     fn next(&mut self) -> Option<Self::Item>;
 
-    fn filter(self) -> MyFilter {
+    fn filter(self /*, predicate closure*/) -> MyFilter {
         todo!()
     }
 
-    fn map(self) -> MyMap {
+    fn map(self /*, mapping closure*/) -> MyMap {
         todo!()
     }
 
