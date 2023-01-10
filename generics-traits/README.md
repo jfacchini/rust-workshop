@@ -1,4 +1,4 @@
-# Implementing MyIterator
+# Implementing (a simplistic) MyIterator
 
 An iterator is a struct that implements a Trait with a method `next()` which returns an `Option`
 that can contain an `Item` of a collection iterated over.
@@ -12,8 +12,9 @@ trait MyIterator {
 }
 ```
 
-=> Implements MyIterator trait for a Vec.
-=> Implements a function that can print a `MyIterator`.
+## Implements a function that can print a `MyIterator`
+
+## Implements MyFilter iterator
 
 A _Filter_ is an iterator that wraps another iterator and returns its next item whenever this item
 is satisfying a predicate closure: `an_iterator.filter(|&item| item % 2 == 0);`
@@ -21,15 +22,19 @@ is satisfying a predicate closure: `an_iterator.filter(|&item| item % 2 == 0);`
 => Implements a method `my_filter()` on `MyIterator` that wraps the current instance of `MyIterator`
 into a `MyFilter` iterator.
 
+## Implements MyMap iterator
+
 A _Map_ is an iterator that wraps another iterator and returns its next item by applying a mapper
 function to them item and returns its result: `an_iterator.map(|item| item * 2);`
 
 => Implements a method `my_map()` on `MyIterator` that wraps the current instance of `MyIterator`
 into a `MyMap` iterator.
 
+## Implements sum on MyIterator
+
 => Implements a method `sum()` on `MyIterator`
 
-// Complements
+## Complements
 
 - to accept a closure as parameter, use a generic type
     ```rust
