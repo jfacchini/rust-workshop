@@ -5,17 +5,17 @@ trait MyIterator {
 
     fn next(&mut self) -> Option<Self::Item>;
 
-    fn filter(self /*, predicate closure*/) -> MyFilter {
-        todo!()
-    }
+    // fn filter(self /*, predicate closure*/) -> MyFilter {
+    //     todo!()
+    // }
 
-    fn map(self /*, mapping closure*/) -> MyMap {
-        todo!()
-    }
+    // fn map(self /*, mapping closure*/) -> MyMap {
+    //     todo!()
+    // }
 
-    fn sum(self) -> i32 {
-        todo!()
-    }
+    // fn sum(self) -> i32 {
+    //     todo!()
+    // }
 }
 
 impl<T> MyIterator for Vec<T> {
@@ -52,4 +52,10 @@ fn main() {
 
     // let total = enumeration.clone().sum();
     // println!("Total: {}", total);
+
+    // let filtered_mapped_total = enumeration.clone()
+    //     .filter(|&item| item % 2 == 0)
+    //     .map(|item| item * 2)
+    //     .sum();
+    // println!("Filtered Mapped total is: {}", filtered_mapped_total);
 }
