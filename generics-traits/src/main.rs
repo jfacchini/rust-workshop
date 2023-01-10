@@ -5,7 +5,7 @@ trait MyIterator {
 
     fn next(&mut self) -> Option<Self::Item>;
 
-    // Replace ? with correct Generic type parameter
+    // Replace ? with correct Generic type parameters
     // fn filter<?>(self, predicate: ?) -> MyFilter<?, ?> {
     //     MyFilter {
     //         iterator: self,
@@ -13,7 +13,7 @@ trait MyIterator {
     //     }
     // }
 
-    // fn map(self /*, mapping closure*/) -> MyMap<?, ?> {
+    // fn map(self, mapper: ?) -> MyMap {
     //     todo!()
     // }
 
@@ -57,7 +57,7 @@ fn main() {
     // let filtered = enumeration.clone().filter(|&item| item % 2 == 0);
     // print_iterator(filtered);
 
-    // let mapped = enumeration.clone().map(|item| item * 1.0);
+    // let mapped = enumeration.clone().map(|item| format!("Value: {}", item));
     // print_iterator(mapped);
 
     // let total = enumeration.clone().sum();

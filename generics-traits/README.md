@@ -28,3 +28,22 @@ function to them item and returns its result: `an_iterator.map(|item| item * 2);
 into a `MyMap` iterator.
 
 => Implements a method `sum()` on `MyIterator`
+
+// Complements
+
+- to accept a closure as parameter, use a generic type
+    ```rust
+    fn use_closure<F: Fn(String) -> bool>(exec: F) {
+        if exec(String::new()) {
+            println!("Closure returned true");
+        }
+    }
+    ```
+- to execute a closure from a struct field
+    ```rust
+    fn closure_from_struct(some_struct: SomeStruct) {
+        if (some_struct.exec)(String::new()) {
+            println!("Closure returned true");
+        } 
+    }
+    ```
