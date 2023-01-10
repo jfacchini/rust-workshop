@@ -12,43 +12,35 @@ trait MyIterator {
 }
 ```
 
-## Implements a function that can print a `MyIterator`
+## Implement a function that can print a `MyIterator`
 
-## Implements MyFilter iterator
+## Implement MyFilter iterator
 
-A _Filter_ is an iterator that wraps another iterator and returns its next item whenever this item
-is satisfying a predicate closure: `an_iterator.filter(|&item| item % 2 == 0);`
+A _Filter_ is an iterator that wraps another iterator and returns its next item whenever this item is satisfying a predicate closure: `my_iterator.filter(|&item| item % 2 == 0);`
 
-=> Implements a method `my_filter()` on `MyIterator` that wraps the current instance of `MyIterator`
-into a `MyFilter` iterator.
+=> Implements the method `filter()` on `MyIterator` that take ownership of the current instance of `MyIterator` into a `MyFilter` iterator.
 
-## Implements MyMap iterator
+## Implement MyMap iterator
 
-A _Map_ is an iterator that wraps another iterator and returns its next item by applying a mapper
-function to them item and returns its result: `an_iterator.map(|item| item * 2);`
+A _Map_ is an iterator that wraps another iterator and returns its next item by applying a mapper function to them item and returns its result: `my_iterator.map(|item| item * 2);`
 
-=> Implements a method `my_map()` on `MyIterator` that wraps the current instance of `MyIterator`
-into a `MyMap` iterator.
+=> Implements a method `map()` on `MyIterator` that take owernship of the current instance of `MyIterator` into a `MyMap` iterator.
 
-## Implements sum on MyIterator
+## Implement sum on MyIterator
 
-=> Implements a method `sum()` on `MyIterator`
+=> Implement a method `sum()` on `MyIterator`
 
 ## Complements
 
 - to accept a closure as parameter, use a generic type
     ```rust
     fn use_closure<F: Fn(String) -> bool>(exec: F) {
-        if exec(String::new()) {
-            println!("Closure returned true");
-        }
-    }
     ```
 - to execute a closure from a struct field
     ```rust
     fn closure_from_struct(some_struct: SomeStruct) {
         if (some_struct.exec)(String::new()) {
             println!("Closure returned true");
-        } 
+        }
     }
     ```
