@@ -1,5 +1,0 @@
-# Implementing TodoMVC
-
-## Extract components
-
-## 
