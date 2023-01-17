@@ -1,6 +1,18 @@
 use std::thread;
 use std::time::Duration;
 
+struct ThreadPool {}
+
+impl ThreadPool {
+    fn new(number_of_threads: u8) -> Self {
+        todo!()
+    }
+
+    fn execute(&self, task: ?) {
+        todo!()
+    }
+}
+
 fn main() {
     let pool = ThreadPool::new(10);
 
@@ -18,16 +30,4 @@ fn main() {
     // Then, replace this line with the `stop` method.
     thread::sleep(Duration::from_secs(3));
     // pool.stop();
-}
-
-struct ThreadPool {}
-
-impl ThreadPool {
-    fn new(number_of_threads: u8) -> Self {
-        todo!()
-    }
-
-    fn execute(&self, task: ?) {
-        todo!()
-    }
 }
