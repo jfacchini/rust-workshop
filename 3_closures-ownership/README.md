@@ -5,7 +5,7 @@ This exercise is inspired by [Ryan Levick's video](https://www.youtube.com/watch
 The goal of this exercise is to implement a Thread pool which is first created with a list of
 threads and can distribute tasks to execute to the threads.
 
-## First part ThreadPool
+## First part - ThreadPool
 
 Implement the ThreadPool struct without changing any lines of code in the `main()`function.
 
@@ -14,7 +14,7 @@ Implement the ThreadPool struct without changing any lines of code in the `main(
 - Each thread is continuously waiting for tasks to execute
 - Each task are sent to a thread via a shared queue
 
-## Second part stop()
+## Second part - stop()
 
 As a way to terminate properly our application, implement a `stop` method to the Thread pool
 that sends a message to the workers indicating to stop their execute. After sending such
