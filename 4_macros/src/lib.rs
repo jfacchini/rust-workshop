@@ -1,0 +1,80 @@
+use std::collections::HashMap;
+
+#[derive(Clone, PartialEq, Debug)]
+enum Json {
+    Null,
+    Boolean(bool),
+    Number(f64),
+    String(String),
+    Array(Vec<Json>),
+    Object(Box<HashMap<String, Json>>),
+}
+
+macro_rules! json {
+    (null) => { Json::Null };
+    // ([ ??? ]) => {
+    //     Json::Array(???)
+    // };
+    // ({ ??? }) => {
+    //     Json::Object(
+    //         ???
+    //     )
+    // };
+    // (???) => {
+    //     ??? // Number, String, Boolean
+    // };
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn parse_a_null_value() {
+        assert_eq!(json!(null), Json::Null);
+    }
+
+    #[test]
+    #[ignore]
+    fn parse_a_valid_boolean() {
+        assert_eq!(json!(true), Json::Boolean(true));
+    }
+
+    #[test]
+    #[ignore]
+    fn parse_a_valid_number() {
+        assert_eq!(json!(1), Json::Number(1 as f64));
+    }
+
+    #[test]
+    #[ignore]
+    fn parse_a_valid_string() {
+        assert_eq!(json!("Hello"), Json::String(String::from("Hello")));
+    }
+
+    #[test]
+    #[ignore]
+    fn parse_a_valid_array() {
+        assert_eq!(json!(["a", "b", "c"]), Json::Array(vec![
+            Json::String(String::from("a")),
+            Json::String(String::from("b")),
+            Json::String(String::from("c")),
+        ]));
+    }
+
+    #[test]
+    #[ignore]
+    fn parse_a_valid_object() {
+        assert_eq!(json!({
+            "Hello": "world",
+            "Test": 1
+        }), Json::Object(
+            Box::new(
+                vec![
+                    (String::from("Hello"), Json::String(String::from("world"))),
+                    (String::from("Test"), Json::Number(1 as f64)),
+                ].into_iter().collect()
+            )
+        ));
+    }
+}
