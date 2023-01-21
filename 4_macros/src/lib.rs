@@ -1,3 +1,5 @@
+mod lib_solution;
+
 use std::collections::HashMap;
 
 #[derive(Clone, PartialEq, Debug)]
@@ -34,47 +36,59 @@ mod tests {
         assert_eq!(json!(null), Json::Null);
     }
 
-    #[test]
-    #[ignore]
-    fn parse_a_valid_boolean() {
-        assert_eq!(json!(true), Json::Boolean(true));
-    }
+    // #[test]
+    // fn parse_a_valid_boolean() {
+    //     assert_eq!(json!(true), Json::Boolean(true));
+    // }
 
-    #[test]
-    #[ignore]
-    fn parse_a_valid_number() {
-        assert_eq!(json!(1), Json::Number(1 as f64));
-    }
+    // #[test]
+    // fn parse_a_valid_number() {
+    //     assert_eq!(json!(1), Json::Number(1.0));
+    //     assert_eq!(json!(1u8), Json::Number(1.0));
+    //     assert_eq!(json!(1u16), Json::Number(1.0));
+    //     assert_eq!(json!(1u32), Json::Number(1.0));
+    //     assert_eq!(json!(1u64), Json::Number(1.0));
+    //     assert_eq!(json!(1u128), Json::Number(1.0));
+    //     assert_eq!(json!(1usize), Json::Number(1.0));
+    //     assert_eq!(json!(1i8), Json::Number(1.0));
+    //     assert_eq!(json!(1i16), Json::Number(1.0));
+    //     assert_eq!(json!(1i32), Json::Number(1.0));
+    //     assert_eq!(json!(1i64), Json::Number(1.0));
+    //     assert_eq!(json!(1i128), Json::Number(1.0));
+    //     assert_eq!(json!(1isize), Json::Number(1.0));
+    // }
 
-    #[test]
-    #[ignore]
-    fn parse_a_valid_string() {
-        assert_eq!(json!("Hello"), Json::String(String::from("Hello")));
-    }
+    // #[test]
+    // fn parse_a_valid_float() {
+    //     assert_eq!(json!(1.0), Json::Number(1.0));
+    // }
 
-    #[test]
-    #[ignore]
-    fn parse_a_valid_array() {
-        assert_eq!(json!(["a", "b", "c"]), Json::Array(vec![
-            Json::String(String::from("a")),
-            Json::String(String::from("b")),
-            Json::String(String::from("c")),
-        ]));
-    }
+    // #[test]
+    // fn parse_a_valid_string() {
+    //     assert_eq!(json!("Hello"), Json::String(String::from("Hello")));
+    // }
 
-    #[test]
-    #[ignore]
-    fn parse_a_valid_object() {
-        assert_eq!(json!({
-            "Hello": "world",
-            "Test": 1
-        }), Json::Object(
-            Box::new(
-                vec![
-                    (String::from("Hello"), Json::String(String::from("world"))),
-                    (String::from("Test"), Json::Number(1 as f64)),
-                ].into_iter().collect()
-            )
-        ));
-    }
+    // #[test]
+    // fn parse_a_valid_array() {
+    //     assert_eq!(json!(["a", "b", "c"]), Json::Array(vec![
+    //         Json::String(String::from("a")),
+    //         Json::String(String::from("b")),
+    //         Json::String(String::from("c")),
+    //     ]));
+    // }
+
+    // #[test]
+    // fn parse_a_valid_object() {
+    //     assert_eq!(json!({
+    //         "Hello": "world",
+    //         "Test": 1
+    //     }), Json::Object(
+    //         Box::new(
+    //             vec![
+    //                 (String::from("Hello"), Json::String(String::from("world"))),
+    //                 (String::from("Test"), Json::Number(1.0)),
+    //             ].into_iter().collect()
+    //         )
+    //     ));
+    // }
 }
