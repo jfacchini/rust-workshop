@@ -19,6 +19,7 @@ pub fn app() -> Html {
                                 <label>{"TODO 1"}</label>
                                 <button class="destroy" />
                             </div>
+                            <input class="edit" type="text" value={"TODO 1"} hidden={true} />
                         </li>
                         <li class={"completed"}>
                             <div class="view">
@@ -26,6 +27,7 @@ pub fn app() -> Html {
                                 <label>{"TODO 2"}</label>
                                 <button class="destroy" />
                             </div>
+                            <input class="edit" type="text" value={"TODO 2"} hidden={true} />
                         </li>
                         <li class={"editing"}>
                             <div class="view">

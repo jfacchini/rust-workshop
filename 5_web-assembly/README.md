@@ -13,4 +13,17 @@ This command is watching all the files in the project and will recompile wheneve
 
 ## Extract components
 
-## 
+- Create new todo input
+- Todo list input
+
+## Load a list of static todos from a state
+
+You could use a state struct like the following one. It will be simpler to pass it down
+to a child component.
+
+```rust
+struct TodoListState {
+    todos: Vec<Todos>
+}
+```
+
