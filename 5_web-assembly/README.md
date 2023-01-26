@@ -13,8 +13,9 @@ This command is watching all the files in the project and will recompile wheneve
 
 ## Extract components
 
-- Create new todo input
-- Todo list input
+- TodoList: Component that receives a list of todo and renders a list of TodoDetails Component
+- TodoDetails: Component that display a given todo to render. A Todo can be either Viewed, Completed, Editing
+- NewTodoInput: Component that display an input that is used to create a new Todo
 
 ## Load a list of static todos from a state
 
@@ -27,3 +28,8 @@ struct TodoListState {
 }
 ```
 
+## Add a new Todo
+
+Implement a callback to a `onkeypress` event triggered by the `<input />` element.
+This callback should emit a `NewInputEntered` event that should be listened to by the parent element.
+The parent element listens to the event using a Callback and update the `TodoListState` 
