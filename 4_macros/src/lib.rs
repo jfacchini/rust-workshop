@@ -1,5 +1,3 @@
-mod lib_solution;
-
 use std::collections::HashMap;
 
 #[derive(Clone, PartialEq, Debug)]
@@ -9,7 +7,7 @@ enum Json {
     Number(f64),
     String(String),
     Array(Vec<Json>),
-    Object(Box<HashMap<String, Json>>),
+    Object(HashMap<String, Json>),
 }
 
 macro_rules! json {
@@ -83,12 +81,10 @@ mod tests {
     //         "Hello": "world",
     //         "Test": 1
     //     }), Json::Object(
-    //         Box::new(
-    //             vec![
-    //                 (String::from("Hello"), Json::String(String::from("world"))),
-    //                 (String::from("Test"), Json::Number(1.0)),
-    //             ].into_iter().collect()
-    //         )
+    //         vec![
+    //             (String::from("Hello"), Json::String(String::from("world"))),
+    //             (String::from("Test"), Json::Number(1.0)),
+    //         ].into_iter().collect()
     //     ));
     // }
 }
