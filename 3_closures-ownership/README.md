@@ -3,11 +3,11 @@
 This exercise is inspired by [Ryan Levick's video](https://www.youtube.com/watch?v=2mwwYbBRJSo).
 
 The goal of this exercise is to implement a Thread pool which is first created with a list of
-threads and can distribute tasks to execute to the threads.
+threads and can distribute tasks to be executed by the worker threads.
 
 ## First part - ThreadPool
 
-Implement the ThreadPool struct without changing any lines of code in the `main()`function.
+Implement the ThreadPool struct without changing any lines of code in the `main`function.
 
 **What is a thread pool?**
 - A fixed list of threads

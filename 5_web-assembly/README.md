@@ -1,7 +1,8 @@
 # Implementing TodoMVC
 
-This folder contains the source files for the [TodoMVC](https://todomvc.com/) example, you
-can see a running example following [this link](https://todomvc.com/examples/react/#/).
+The goal of this exercise is to extract the current HTML content into a dynamic application using the `Yew` framework. 
+
+This folder contains the source files for the [TodoMVC](https://todomvc.com/) example, you can see a running example following [this link](https://todomvc.com/examples/react/#/).
 
 To start the project locally, please run the following command:
 
@@ -13,14 +14,17 @@ This command is watching all the files in the project and will recompile wheneve
 
 ## Extract components
 
-- TodoList: Component that receives a list of todo and renders a list of TodoDetails Component
-- TodoDetails: Component that display a given todo to render. A Todo can be either Viewed, Completed, Editing
-- AddTodo: Component that display an input that is used to create a new Todo
+Let's start by extracting some components from the HTML view
+
+- **TodoList**: Component that receives a list of todo and renders a list of `TodoDetails` Component
+- **TodoDetails**: Component that display a given todo to render. A Todo can be either Viewed, Completed, Editing
+- **AddTodo**: Component that display an input that is used to create a new Todo
 
 ## Load a list of static todos from a state
 
-You could use a state struct like the following one. It will be simpler to pass it down
-to a child component.
+The next step is to introduce a state containing our list of todos. First step is to use a static list of Todos that we will make dynamic by reacting to some events.
+
+You could use a state struct like the following one. It will be simpler to pass it down to a child component.
 
 ```rust
 struct TodoListState {

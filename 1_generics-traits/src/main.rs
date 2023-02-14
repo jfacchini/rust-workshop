@@ -6,18 +6,18 @@ trait MyIterator {
     fn next(&mut self) -> Option<Self::Item>;
 
     // Replace ? with correct Generic type parameters
-    // fn filter<?>(self, predicate: ?) -> MyFilter<?, ?> {
+    // fn my_filter<?>(self, predicate: ?) -> MyFilter<?, ?> {
     //     MyFilter {
     //         iterator: self,
     //         predicate,
     //     }
     // }
 
-    // fn map(self, mapper: ?) -> MyMap {
+    // fn my_map(self, mapper: ?) -> MyMap {
     //     todo!()
     // }
 
-    // fn sum(mut self) -> i32 {
+    // fn my_sum(mut self) -> i32 {
     //     todo!()
     // }
 }
@@ -54,18 +54,18 @@ fn main() {
     let enumeration = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     print_iterator(enumeration.clone());
 
-    // let filtered = enumeration.clone().filter(|&item| item % 2 == 0);
+    // let filtered = enumeration.clone().my_filter(|&item| item % 2 == 0);
     // print_iterator(filtered);
 
-    // let mapped = enumeration.clone().map(|item| format!("Value: {}", item));
+    // let mapped = enumeration.clone().my_map(|item| format!("Value: {}", item));
     // print_iterator(mapped);
 
-    // let total = enumeration.clone().sum();
+    // let total = enumeration.clone().my_sum();
     // println!("Total: {}", total);
 
     // let filtered_mapped_total = enumeration.clone()
-    //     .filter(|&item| item % 2 == 0)
-    //     .map(|item| item * 2)
-    //     .sum();
+    //     .my_filter(|&item| item % 2 == 0)
+    //     .my_map(|item| item * 2)
+    //     .my_sum();
     // println!("Filtered Mapped total is: {}", filtered_mapped_total);
 }
